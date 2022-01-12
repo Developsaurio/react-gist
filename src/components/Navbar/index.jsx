@@ -37,7 +37,10 @@ const Navbar = ({dark, disabled}) => {
                         active={dark ? true : false} 
                         />   
                     </MenuItem>
-                    <MenuItem className='selected'>
+                    <MenuItem dark={dark}> 
+                        <p>{ dark ? 'Light mode' : 'Dark mode' }</p>
+                    </MenuItem>
+                    <MenuItem>
                         <UserIcon dark={dark}/>
                     </MenuItem>
                 </Menu>

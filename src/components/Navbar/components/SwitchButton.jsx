@@ -27,30 +27,31 @@ const Toggle = styled.div`
   right: 2px;;
     
   &:hover {
-    background-color: ${colors.mid};
+    background-color: var(--hover);
   }
 `;
-
-
 
 const SwitchButton = ({ onClick, active, disabled }) => {  
 
   const onactive = {
     '--color': colors.secondary,
     '--translate': 'translate(27px,2px)',
-    '--circle': colors.mid
+    '--circle': colors.mid,
+    '--hover': colors.clear
   };
 
   const inactive = {
     '--color': colors.dark,
     '--translate': 'translate(2px,2px)',
-    '--circle': colors.white
+    '--circle': colors.white,
+    '--hover': colors.mid
   };
 
   const disable = {
     '--color': colors.gray,
     '--translate': 'translate(2px,2px)',
-    '--circle': colors.disabled
+    '--circle': colors.disabled,
+    '--hover': colors.light
   };
 
   return (

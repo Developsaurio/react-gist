@@ -77,10 +77,12 @@ const MenuItem = styled.div`
 	font-size: 15px;
 	margin-right: 5px;
 	cursor: pointer;
-	
-	&.selected:hover{
-		border-bottom: 2px solid #c7c7c7;
-		padding-bottom: 5px;
+	text-align: center;
+
+	p{
+		width: 90px;
+		margin-left: 20px;
+		color: ${({dark})=> (dark ? colors.clear : colors.white)};
 	}
 `;
 const Side = styled.div`
