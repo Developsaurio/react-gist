@@ -8,7 +8,33 @@ const Container = styled.svg`
     background: ${({dark})=> (dark ? colors.mid : colors.disabled)};
     border-radius: 50%;
     padding: 10px;
-    margin-left: 40px;
+    
+    &:hover{
+      -webkit-animation: rotate-center 0.6s ease-in-out both;
+	    animation: rotate-center 0.6s ease-in-out both;
+    }
+
+    @-webkit-keyframes rotate-center {
+      0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    @keyframes rotate-center {
+      0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+
 `;
 const Line = styled.circle`
     fill:  none;
