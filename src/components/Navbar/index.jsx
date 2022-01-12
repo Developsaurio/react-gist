@@ -9,7 +9,8 @@ import {
     MenuItem,
     SideNav
 } from './styles';
-import Search from './Search';
+import Search from './components/Search';
+import SwitchButton from './components/SwitchButton';
 
 const Navbar = ({dark}) => {
 
@@ -29,8 +30,12 @@ const Navbar = ({dark}) => {
                     />
                 </Searcher>
                 <Menu>
-                    <MenuItem>switch Dak mode</MenuItem>
-                    <MenuItem>Profile Picture</MenuItem>
+                    <MenuItem>
+                        <SwitchButton disabled />   
+                    </MenuItem>
+                    <MenuItem className='selected'>
+                        Profile Picture
+                    </MenuItem>
                 </Menu>
             </Container>
         </Header>

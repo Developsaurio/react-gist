@@ -32,6 +32,7 @@ export const colors = {
     transparent: '#ffffff3b',
     white: "#ffffff",
     black: "#000000",
+    gray: "#808080",
     shadow: "#03326956",
     disabled: "#EDEDED",   
 };
