@@ -9,20 +9,21 @@ import {
     MenuItem,
     SideNav
 } from './styles';
-import Search from './components/Search';
+import SearchIcon from './components/SearchIcon';
+import UserIcon from './components/UserIcon';
 import SwitchButton from './components/SwitchButton';
 
-const Navbar = ({dark}) => {
+const Navbar = ({dark, disabled}) => {
 
     return (
         <>
         <Header dark={dark}>
             <Container>
-                <Hamburger>
+                <Hamburger dark={dark}>
                     <label for="btn-menu">☰</label>
                 </Hamburger>
                 <Searcher>
-                    <Search />
+                    <SearchIcon />
                     <input 
                     placeholder="Search…" 
                     type="text" 
@@ -31,10 +32,13 @@ const Navbar = ({dark}) => {
                 </Searcher>
                 <Menu>
                     <MenuItem>
-                        <SwitchButton disabled />   
+                        <SwitchButton 
+                        disabled={disabled} 
+                        active={dark ? true : false} 
+                        />   
                     </MenuItem>
                     <MenuItem className='selected'>
-                        Profile Picture
+                        <UserIcon dark={dark}/>
                     </MenuItem>
                 </Menu>
             </Container>

@@ -22,7 +22,7 @@ const Hamburger =styled.div`
 	line-height:70px;
 
 	label{
-		color: #fff;
+		color: ${({dark})=> (dark ? colors.clear : colors.white)};
 		font-size: 25px;
 		cursor: pointer;
 	}
@@ -88,7 +88,8 @@ const Side = styled.div`
 	background: rgba(0,0,0,0.5);
 	width: 100%;
 	height: 100vh;
-	top: 0;left: 0;
+	top: 0;
+	left: 0;
 	transition: all 500ms ease;
 	opacity: 0;
 	visibility: hidden;
@@ -115,8 +116,8 @@ const Side = styled.div`
 	
 	.cont-menu label{
 		position: absolute;
-		right: 5px;
-		top: 10px;
+		right: 25px;
+		top: 20px;
 		color: #fff;
 		cursor: pointer;
 		font-size: 18px;
@@ -124,6 +125,7 @@ const Side = styled.div`
 `;
 const SideNav = styled.nav`
 	transform: translateY(15%);
+	padding-top: 40px;
 
 	a{
 		display: block;
