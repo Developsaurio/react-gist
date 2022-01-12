@@ -22,7 +22,7 @@ const Path = styled.path`
     stroke: ${colors.white};
 `;
 
-const Search = () => (
+const SearchIcon = () => (
     <Container  viewBox="0 0 28 28">
       <g transform="translate(3.5 3.5)">
         <Line
@@ -35,4 +35,4 @@ const Search = () => (
     </Container>
 );
 
-export default Search;
+export default SearchIcon;

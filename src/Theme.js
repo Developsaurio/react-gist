@@ -33,6 +33,7 @@ export const colors = {
     white: "#ffffff",
     black: "#000000",
     gray: "#808080",
+    green: '#98CA3F',
     shadow: "#03326956",
     disabled: "#EDEDED",   
 };
