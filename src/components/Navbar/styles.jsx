@@ -61,10 +61,13 @@ const Searcher =styled(Hamburger)`
 `;
 const Menu = styled.nav`
 	float: right;
-	line-height: 100px;
+    height: 70px;
+    align-items: center;
+    display: inline-flex;
 `;
 const MenuItem = styled.div`
 	display: inline-block;
+	width: 100%;
 	padding: 15px;
 	line-height: normal;
 	text-decoration: none;
@@ -75,7 +78,7 @@ const MenuItem = styled.div`
 	margin-right: 5px;
 	cursor: pointer;
 	
-	&:hover{
+	&.selected:hover{
 		border-bottom: 2px solid #c7c7c7;
 		padding-bottom: 5px;
 	}
