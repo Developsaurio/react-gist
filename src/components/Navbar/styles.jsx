@@ -143,7 +143,6 @@ const SideNav = styled.nav`
 		background: #1f1f1f;
 	}
 `;
-
 export {
     Header,
     Container,
@@ -152,5 +151,5 @@ export {
 	Searcher,
 	Menu,
 	MenuItem,
-	SideNav
+	SideNav,
 };
