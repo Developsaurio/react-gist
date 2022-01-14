@@ -11,7 +11,7 @@ import {
 } from './styles';
 import SearchIcon from './components/SearchIcon';
 import UserIcon from './components/UserIcon';
-import SwitchButton from './components/SwitchButton';
+import SwitchButton from '../SwitchButton/SwitchButton';
 
 const Navbar = ({dark, disabled}) => {
 
@@ -20,7 +20,7 @@ const Navbar = ({dark, disabled}) => {
         <Header dark={dark}>
             <Container>
                 <Hamburger dark={dark}>
-                    <label for="btn-menu">☰</label>
+                    <label htmlFor="btn-menu">☰</label>
                 </Hamburger>
                 <Searcher>
                     <SearchIcon />
@@ -54,7 +54,7 @@ const Navbar = ({dark, disabled}) => {
                 <SideNav>
                     <a href="/">Home</a>
                 </SideNav>
-                <label for="btn-menu">✖️</label>
+                <label htmlFor="btn-menu">✖️</label>
             </div>
         </Side>
       

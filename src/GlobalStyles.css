@@ -8,7 +8,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #EDEDED;
 }
 
 h1,h2,h3,h4,label,span,p,a {
@@ -21,7 +20,7 @@ h1 {
   font-weight: 500;
 }
 h2 {
-    font-size: 28px;   
+    font-size: 25px;   
     font-weight: 500; 
     letter-spacing: 0.03rem;
 }
