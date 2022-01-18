@@ -65,6 +65,8 @@ const Content = styled.div`
     padding: 15px;
 `;
 const Card = ({data}) => {
+    console.log("DATAcard", data)
+
     const onClick = () => console.log(data.channelId);
     const img = !!data && data.thumbnails.high.url;
     const title = !!data && data.title;
@@ -75,7 +77,7 @@ const Card = ({data}) => {
         <Container onClick={onClick}>
             <Image>
                 <img 
-                src={img ? img : NotFound} 
+                src={!!img ? img : NotFound} 
                 alt={alt ? alt : 'Not_found'}
                 className={img ? 'full-cover' : 'center'}
                 />

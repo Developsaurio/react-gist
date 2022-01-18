@@ -1,6 +1,5 @@
 import Card from '../components/Card';
 import styled from 'styled-components';
-import mock from '../resources/youtube-videos-mock.json';
 import { device } from '../Theme';
 
 const Container = styled.div`
@@ -19,7 +18,7 @@ const Grid = styled.div`
       grid-template-columns: repeat(auto-fill, 280px);
     }
 `;
-const Home = () => {
+const Home = ({data}) => {
   return (
     <>
       <Container >
@@ -27,7 +26,7 @@ const Home = () => {
       </Container>
 
       <Grid>
-        { mock.items.map((item)=> (
+        {data?.items.map((item)=> (          
           <Card data={item.snippet} key={item.etag}/> 
           ))
         }
