@@ -1,38 +1,18 @@
-import Card from './components/Card';
-import styled from 'styled-components';
-import mock from './resources/youtube-videos-mock.json';
-import { device } from './Theme';
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Layout from './containers/Layout';
+import Home from './pages/Home';
+import Videos from './pages/Videos';
 
-const Container = styled.div`
-    text-align: center;
-    margin-bottom: 40px;
-`;
-
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 350px);
-    grid-gap: 20px;
-    justify-content: center;
-    width: 100%;
-
-    @media ${device.tablet} { 
-      grid-template-columns: repeat(auto-fill, 280px);
-    }
-`;
+   
 function App() {
   return (
-    <>
-      <Container >
-        <h1>Welcome to the Challenge!</h1>
-      </Container>
-
-      <Grid>
-        { mock.items.map((item)=> (
-          <Card data={item.snippet} key={item.etag}/> 
-          ))
-        }
-      </Grid>
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/videos' component={Videos}/>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
