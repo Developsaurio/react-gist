@@ -19,7 +19,7 @@ const Grid = styled.div`
       grid-template-columns: repeat(auto-fill, 280px);
     }
 `;
-function App({dark}) {
+function App() {
   return (
     <>
       <Container >

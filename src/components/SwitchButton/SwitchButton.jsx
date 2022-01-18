@@ -31,7 +31,7 @@ const Toggle = styled.div`
   }
 `;
 
-const SwitchButton = ({ onClick, active, disabled }) => {  
+const SwitchButton = ({ active, disabled }) => {  
 
   const onactive = {
     '--color': colors.secondary,
@@ -56,7 +56,6 @@ const SwitchButton = ({ onClick, active, disabled }) => {
 
   return (
     <Container 
-    onClick={onClick} 
     active={active} 
     style={disabled ? disable : active ? onactive : inactive}
     >

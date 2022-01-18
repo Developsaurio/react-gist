@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
-import { colors, device} from '../../Theme';
-import NotFound from '../../resources/noimage.png';
+import { colors, device} from '../Theme';
+import NotFound from '../resources/noimage.png';
 
 const Container = styled.div`
+    display: grid;
+    grid-template-columns: 125px auto;
     width: 100%;
-    height: 310px;
+    height: 100px;
+    align-items: start;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
@@ -13,76 +16,60 @@ const Container = styled.div`
     -webkit-box-shadow: 3px 4px 9px 2px ${colors.shadow}; 
 	box-shadow: 3px 4px 9px 2px ${colors.shadow};
 
-    h2{
+    h4{
         color: var(--title);
         margin-top: 0px;
 
         @media ${device.tablet} { 
-            margin-top: 8px;
+            margin-top: 5px;
         }
     }
-    p{
+    label{
         color: var(--description);
-        margin-top: 8px;
+        margin-top: 5px;
     }
 
     &:hover{
         background: ${colors.clear};
-        width: 102%;
-        height: 305px;
-        p{
+       
+        label{
                 color: ${colors.gray};
-        }
+        }   
     }
 `;
 
 const Image = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
-    height: 150px;
-    background: ${colors.shadow};
-    -webkit-box-shadow: 3px 4px 9px 2px ${colors.shadow}; 
-	box-shadow: 3px 4px 9px 2px ${colors.shadow};
+    overflow: hidden;
 
     img{
-        width: auto;
-        height: 150px;
-    }
-
-    .center{
-        height: 100px;
+        width: 100%;
+        height: auto;
     }
 `;
 
 const Content = styled.div`
     padding: 15px;
 `;
-const Card = ({data}) => {
-    console.log('Data', data)
-    const onClick = () => console.log(data);
-    const img = '';
-    const title = !!data && data.title;
-    const description = !!data && data.title;
-    const alt= !!data && data.title;
-
+const ItemList = ({title, description, img, onClick}) => {
 
     return (
         <Container onClick={onClick}>
             <Image>
                 <img 
                 src={img ? img : NotFound} 
-                alt={alt ? alt : 'Not_found'}
-                className={!img && 'center'}
+                alt={title ? title : 'Not_found'}
                 />
             </Image>
             <Content>
-                <h2>{title}</h2>
-                <p>{description}</p>
+                <h4>{title}</h4>
+                <label>{description}</label>
             </Content>
         </Container>
     )
 };
 
-export default Card;
+export default ItemList;

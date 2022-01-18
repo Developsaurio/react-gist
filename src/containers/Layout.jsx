@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import Navbar from '../components/Navbar';
 import styled from 'styled-components';
 import { colors } from '../Theme';
@@ -6,6 +7,7 @@ const Container = styled.div`
     padding-top: 70px;
     width: 95%;
     margin: 0 auto;
+    padding-bottom: 80px;;
 `;
 const Background = styled.div`
     min-height: 100vh;
@@ -13,7 +15,8 @@ const Background = styled.div`
     color: ${({dark})=>(dark ? colors.clear : colors.primary)};
 `;
 
-const Layout =({children, dark}) => {
+const Layout =({children}) => {
+  const [dark, setDark] = useState(false);
 
   const light = {
     '--title': colors.secondary,
@@ -27,7 +30,7 @@ const Layout =({children, dark}) => {
 
   return (
     <Background dark={dark}>
-      <Navbar dark={dark}/>
+      <Navbar dark={dark} setDark={setDark}/>
      
       <Container style={dark ? night : light}>
         {children}

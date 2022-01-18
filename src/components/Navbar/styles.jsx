@@ -4,7 +4,7 @@ import {colors} from '../../Theme';
 const Header = styled.div`
     background: ${({dark})=> ( dark ? colors.dark : colors.secondary)};
     color: ${colors.white};
-
+	z-index: 300;
     width: 100%;
     height: 70px;
     position: fixed;
@@ -95,6 +95,7 @@ const Side = styled.div`
 	transition: all 500ms ease;
 	opacity: 0;
 	visibility: hidden;
+	z-index: 300;
 
     #btn-menu{
 		display: none;
@@ -128,6 +129,8 @@ const Side = styled.div`
 const SideNav = styled.nav`
 	transform: translateY(15%);
 	padding-top: 40px;
+	z-index: 301;
+
 
 	a{
 		display: block;

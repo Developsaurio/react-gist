@@ -7,6 +7,6 @@ describe('SwitchButton Component', () => {
         const { getByRole } = render(<SwitchButton />)
         // const props = container.get('active')
 
-        getByRole('div')
+        // getByRole('div')
     })
 });

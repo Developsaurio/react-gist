@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
     Header,
     Container,
@@ -9,11 +9,11 @@ import {
     MenuItem,
     SideNav
 } from './styles';
-import SearchIcon from './components/SearchIcon';
-import UserIcon from './components/UserIcon';
+import SearchIcon from '../../resources/icons/SearchIcon';
+import UserIcon from '../../resources/icons/UserIcon';
 import SwitchButton from '../SwitchButton/SwitchButton';
 
-const Navbar = ({dark, disabled}) => {
+const Navbar = ({dark, disabled, setDark}) => {
 
     return (
         <>
@@ -31,10 +31,10 @@ const Navbar = ({dark, disabled}) => {
                     />
                 </Searcher>
                 <Menu>
-                    <MenuItem>
+                    <MenuItem onClick={()=>setDark(!dark)}>
                         <SwitchButton 
                         disabled={disabled} 
-                        active={dark ? true : false} 
+                        active={dark} 
                         />   
                     </MenuItem>
                     <MenuItem dark={dark}> 

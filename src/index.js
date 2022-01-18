@@ -4,13 +4,13 @@ import './GlobalStyles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Layout from './containers/Layout';
-
-const dark = true;
+import Videos from './pages/Videos';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Layout dark={dark}>
-      <App />
+    <Layout>
+      {/* <App /> */}
+      <Videos/>
     </Layout>
   </React.StrictMode>,
   document.getElementById('root')
