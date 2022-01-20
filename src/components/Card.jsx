@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { colors, device} from '../Theme';
 import NotFound from '../resources/noimage.png';
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
     width: 100%;
@@ -39,7 +40,6 @@ const Container = styled.div`
     
     }
 `;
-
 const Image = styled.div`
     display: flex;
     justify-content: center;
@@ -60,18 +60,23 @@ const Image = styled.div`
         opacity: 0.6;
     }
 `;
-
 const Content = styled.div`
     padding: 15px;
 `;
-const Card = ({data}) => {
-    console.log("DATAcard", data)
 
-    const onClick = () => console.log(data.channelId);
+const Card = ({data, onSubmit}) => {
     const img = !!data && data.thumbnails.high.url;
     const title = !!data && data.title;
     const description = !!data && data.title;
     const alt= !!data && data.title;
+
+    let navigate = useNavigate();
+
+    const onClick = async (e) => {
+        e.preventDefault();
+        onSubmit();
+        navigate(`/videos`);
+    };
 
     return (
         <Container onClick={onClick}>

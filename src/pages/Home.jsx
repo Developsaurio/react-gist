@@ -6,7 +6,6 @@ const Container = styled.div`
     text-align: center;
     margin-bottom: 40px;
 `;
-
 const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
@@ -18,7 +17,13 @@ const Grid = styled.div`
       grid-template-columns: repeat(auto-fill, 280px);
     }
 `;
-const Home = ({data}) => {
+const Home = ({ data, setVideo }) => {
+    
+  const handleData = (info) => {
+    const tag = info.id.videoId || info.id.channelId;    
+    setVideo({title: info.snippet.title, description: info.snippet.description, id: tag })
+  }
+
   return (
     <>
       <Container >
@@ -26,8 +31,12 @@ const Home = ({data}) => {
       </Container>
 
       <Grid>
-        {data?.items.map((item)=> (          
-          <Card data={item.snippet} key={item.etag}/> 
+      {!!data && data.items.filter((item)=> {return !!item.id.videoId}).map(item => (
+          <Card 
+          data={item.snippet} 
+          key={item.etag} 
+          onSubmit={()=>handleData(item)}
+          /> 
           ))
         }
       </Grid>

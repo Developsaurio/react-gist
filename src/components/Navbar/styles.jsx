@@ -132,16 +132,17 @@ const SideNav = styled.nav`
 	z-index: 301;
 
 
-	a{
+	div{
 		display: block;
 		text-decoration: none;
 		padding: 20px;
 		color: #c7c7c7;
 		border-left: 5px solid transparent;
 		transition: all 400ms ease;
+		cursor: pointer;
 	}
 
-	a:hover{
+	div:hover{
 		border-left: 5px solid #c7c7c7;
 		background: #1f1f1f;
 	}
