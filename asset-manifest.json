@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Developsaurio/react-gist/static/css/main.dfbc0ef6.css",
-    "main.js": "/Developsaurio/react-gist/static/js/main.bde2b633.js",
-    "static/js/787.5284b85a.chunk.js": "/Developsaurio/react-gist/static/js/787.5284b85a.chunk.js",
-    "index.html": "/Developsaurio/react-gist/index.html",
-    "main.dfbc0ef6.css.map": "/Developsaurio/react-gist/static/css/main.dfbc0ef6.css.map",
-    "main.bde2b633.js.map": "/Developsaurio/react-gist/static/js/main.bde2b633.js.map",
-    "787.5284b85a.chunk.js.map": "/Developsaurio/react-gist/static/js/787.5284b85a.chunk.js.map"
+    "main.css": "/react-gist/static/css/main.dfbc0ef6.css",
+    "main.js": "/react-gist/static/js/main.2df0dbdf.js",
+    "static/js/787.5284b85a.chunk.js": "/react-gist/static/js/787.5284b85a.chunk.js",
+    "index.html": "/react-gist/index.html",
+    "main.dfbc0ef6.css.map": "/react-gist/static/css/main.dfbc0ef6.css.map",
+    "main.2df0dbdf.js.map": "/react-gist/static/js/main.2df0dbdf.js.map",
+    "787.5284b85a.chunk.js.map": "/react-gist/static/js/787.5284b85a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dfbc0ef6.css",
-    "static/js/main.bde2b633.js"
+    "static/js/main.2df0dbdf.js"
   ]
 }
