@@ -31,7 +31,7 @@ const Home = ({ data, setVideo }) => {
       </Container>
 
       <Grid>
-      {!!data && data.items.filter((item)=> {return !!item.id.videoId}).map(item => (
+      {!!data && data?.items.filter((item)=> {return !!item.id.videoId}).map(item => (
           <Card 
           data={item.snippet} 
           key={item.etag} 

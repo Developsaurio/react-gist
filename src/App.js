@@ -11,7 +11,6 @@ import { VideoContext } from './resources/state/videoContext';
 
 const YOUTUBE_API_URL= 'https://www.googleapis.com/youtube/v3/search';
 const KEY = 'AIzaSyDcmvhajFZY_7MjXmJJVAkHxBXy1gsR3Ps';
-const url = `${YOUTUBE_API_URL}?part=snippet&key=${KEY}`;
 
 const initialState= {
   id:'',
@@ -23,6 +22,9 @@ const initialState= {
 const App = () => {
   const [data, setData] = useState();
   const [video, setVideo] = useState(initialState);
+  const [searcher, setSearcher] = useState('dinosaur');
+
+  const url = `${YOUTUBE_API_URL}?part=snippet&q=${searcher}&type=video&key=${KEY}`;
 
   useEffect(() => {      
     fetch(url).then((res)=> res.json()).then((elements) =>  setData({...elements, pageInfo: {totalResults: 1000000,resultsPerPage: 20}}));    
@@ -31,7 +33,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <VideoContext.Provider value={video}>
-        <Layout setTheme={setVideo}>
+        <Layout setTheme={setVideo} searcher={searcher} setSearcher={setSearcher}>
           <Routes>
             <Route exact path='/' element={<Home data={data} setVideo={setVideo}/>}/>
             <Route path='/videos' 

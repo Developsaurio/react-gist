@@ -16,7 +16,7 @@ const Background = styled.div`
     color: ${({dark})=>(dark ? colors.clear : colors.primary)};
 `;
 
-const Layout =({children, setTheme}) => {
+const Layout =({children, setTheme, searcher, setSearcher}) => {
   const theme = useContext(VideoContext);    
   const [dark, setDark] = useState(theme.theme);
 
@@ -38,7 +38,12 @@ const Layout =({children, setTheme}) => {
 
   return (
     <Background dark={dark}>
-      <Navbar dark={dark} setDark={handleTheme}/>
+      <Navbar 
+      dark={dark} 
+      setDark={handleTheme} 
+      searcher={searcher} 
+      setSearcher={setSearcher}
+      />
      
       <Container style={dark ? night : light}>
         {children}

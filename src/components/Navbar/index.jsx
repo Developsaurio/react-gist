@@ -14,7 +14,7 @@ import UserIcon from '../../resources/icons/UserIcon';
 import SwitchButton from '../SwitchButton/SwitchButton';
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({dark, disabled, setDark}) => {
+const Navbar = ({dark, disabled, setDark, searcher, setSearcher}) => {
     
     let navigate = useNavigate();
     
@@ -36,7 +36,8 @@ const Navbar = ({dark, disabled, setDark}) => {
                     placeholder="Search…" 
                     type="text" 
                     aria-label="search" 
-                    value={"Wizeline"}
+                    value={searcher}
+                    onChange={(e)=>setSearcher(e.value)}
                     />
                 </Searcher>
                 <Menu>
